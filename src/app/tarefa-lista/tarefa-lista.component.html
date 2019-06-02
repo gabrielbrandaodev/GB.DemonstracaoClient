@@ -1,0 +1,29 @@
+<article class="container container-fluid">
+  <section>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Nome Arquivo</th>
+          <th scope="col">Data Início</th>
+          <th scope="col">Data Fim</th>
+          <th scope="col">Status</th>
+          <th scope="col">Progresso</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let tarefa of tarefas">
+          <td>{{tarefa.nomeArquivo}}</td>
+          <td>{{tarefa.dataInicio | date: 'dd/MM/yyyy hh:mm:ss' }}</td>
+          <td>{{tarefa.dataFim | date: 'dd/MM/yyyy hh:mm:ss' }}</td>
+          <td>{{tarefa.statusStr}}</td>
+          <td>{{tarefa.progresso}} %</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="row">
+      <div class="offset-md-10 col-md-2">
+        <!-- <button type="button" class="btn btn-primary" (click)="returnToCreate()"></button> -->
+      </div>
+    </div>
+  </section>
+</article>

@@ -1,0 +1,30 @@
+<article class="container container-fluid">
+  <section>
+    <div class="form-group">
+      <input [(ngModel)]="searchText" class="form-control col-md-5" placeholder="Pesquisa">
+    </div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Telefone</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Data Nascimento</th>
+          <th scope="col">Data Inserção</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cliente of clientes | filter : searchText">
+          <td>{{cliente.telefone}}</td>
+          <td>{{cliente.nome}}</td>
+          <td>{{cliente.dataNascimento | date: 'dd/MM/yyyy' }}</td>
+          <td>{{cliente.dataInsercao | date: 'dd/MM/yyyy' }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="row">
+      <div class="offset-md-10 col-md-2">
+        <!-- <button type="button" class="btn btn-primary" (click)="returnToCreate()"></button> -->
+      </div>
+    </div>
+  </section>
+</article>
